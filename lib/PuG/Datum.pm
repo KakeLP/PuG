@@ -8,24 +8,57 @@ use JSON;
 use PuG::Match;
 use WWW::Mechanize;
 
+=head1 NAME
+
+PuG::Datum - Model a single info paragraph from a Pubs Galore activity report email.
+
+=head1 DESCRIPTION
+
+Model a single info paragraph from a Pubs Galore activity report email.
+
+=head1 METHODS
+
+=over
+
+=item B<new>
+
+  my $content = qq( A review has been submitted for <a
+    href="http://www.pubsgalore.co.uk/pubs/24672/">Dog &amp; Fox</a> in SW19,
+    London (Greater) by <a
+    href="http://www.pubsgalore.co.uk/userinfo.php?name=John+Grenade">Doug
+    Middleton</a>. );
+  my $datum = PuG::Datum->new( $content );
+
+Input: A single info paragraph (HTML) from a Pubs Galore activity report.
+
+=cut
+
 sub new {
   my ( $class, $data ) = @_;
   my $self = {};
   bless $self, $class;
 
   # Store things we can get directly from the supplied data.
-  $self->{_name} = $self->identify_name( $data );
-  $self->{_type} = $self->identify_type( $data );
-  $self->{_url} = $self->identify_url( $data );
+  $self->{_name} = $self->_identify_name( $data );
+  $self->{_type} = $self->_identify_type( $data );
+  $self->{_url} = $self->_identify_url( $data );
 
   # Now go and get things from the PuG site.
-  $self->{_address} = $self->identify_address( $data );
-  $self->{_district} = $self->identify_district( $data );
+  $self->{_address} = $self->_identify_address( $data );
+  $self->{_district} = $self->_identify_district( $data );
 
   return $self;
 }
 
-# my @matches = $datum->match_to_rgl;
+=item B<match_to_rgl>
+
+  my @matches = $datum->match_to_rgl;
+
+Returns false if necessary data not found.  Otherwise returns an array
+of L<PuG::Match> objects; this will be empty if no potential matches
+were found.  There may be more than one potential match.
+
+=cut
 
 sub match_to_rgl {
   my $self = shift;
@@ -69,6 +102,16 @@ sub match_to_rgl {
   return @matches;
 }
 
+=item B<pub_page_html>
+
+  my $html = $datum->pub_page_html;
+
+Returns the HTML source of the pub page this datum is about.  Dies if
+the datum can't identify the pub page URL.  Caches the HTML after the
+first request.
+
+=cut
+
 sub pub_page_html {
   my $self = shift;
   return $self->{_pub_page_html} if $self->{_pub_page_html};
@@ -79,7 +122,9 @@ sub pub_page_html {
   $self->{_pub_page_html} = $content;
 }
 
-sub identify_address {
+# Internal methods to pull out data.
+
+sub _identify_address {
   my ( $self, $data ) = @_;
   my $html = $self->pub_page_html;
   return unless $html;
@@ -109,7 +154,7 @@ sub identify_address {
   return $address;
 }
 
-sub identify_district {
+sub _identify_district {
   my ( $self, $data ) = @_;
   my $html = $self->pub_page_html;
   return unless $html;
@@ -139,7 +184,7 @@ sub identify_district {
   return $district;
 }
 
-sub identify_name {
+sub _identify_name {
   my ( $self, $data ) = @_;
   $data =~ m|<a href="http://www.pubsgalore.co.uk/pubs/\d+/">([^<]+)</a>|;
   my $name = $1;
@@ -149,7 +194,7 @@ sub identify_name {
   return $name;
 }
 
-sub identify_type {
+sub _identify_type {
   my ( $self, $data ) = @_;
   if ( $data =~ m/^A review has been submitted for/ ) {
     return "review";
@@ -161,11 +206,20 @@ sub identify_type {
   }
 }
 
-sub identify_url {
+sub _identify_url {
   my ( $self, $data ) = @_;
   $data =~ m|<a href="(http://www.pubsgalore.co.uk/pubs/\d+/)">|;
   return $1;
 }
+
+=item B<accessors>
+
+Accessors: address, district (i.e. postal district, e.g. SW15), name,
+type, url.
+
+Type can be: open, picture, review.
+
+=cut
 
 sub address { return shift->{_address}; }
 sub district { return shift->{_district}; }

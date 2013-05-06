@@ -16,7 +16,8 @@ mentioned with the corresponding RGL entries.
 
 =head1 DESCRIPTION
 
-See NAME.
+Parse activity report emails from Pubs Galore, and match up the pubs
+mentioned with the corresponding RGL entries.
 
 =head1 METHODS
 
