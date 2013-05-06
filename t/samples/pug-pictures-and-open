@@ -1,0 +1,115 @@
+From donotreply@galorenetwork.co.uk Tue Sep 04 16:55:21 2012
+Return-path: <donotreply@galorenetwork.co.uk>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on the.earth.li
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.4 required=5.0 tests=BAYES_00,HTML_MESSAGE,
+	MIME_HTML_ONLY,MPART_ALT_DIFF,SPF_FAIL,T_DKIM_INVALID autolearn=no
+	version=3.3.1
+Envelope-to: kake@earth.li
+Delivery-date: Tue, 04 Sep 2012 16:55:21 +0100
+Received: from relay7out.redstationmail.co.uk ([176.227.206.66])
+	by the.earth.li with esmtp (Exim 4.72)
+	(envelope-from <donotreply@galorenetwork.co.uk>)
+	id 1T8vTF-0005Gw-9d
+	for kake@earth.li; Tue, 04 Sep 2012 16:55:21 +0100
+Received: from relay2in (relay2in.redstationmail.co.uk [109.73.64.2])
+	by relay7out.redstationmail.co.uk (Postfix) with ESMTP id 747FB41705AF
+	for <kake@earth.li>; Tue,  4 Sep 2012 16:55:55 +0100 (BST)
+Received: from mail.novamarque.com (188.227.176.226) by relay2in (Redstation ESMTP MAIL Service) with ESMTP id 27232446; Tue, 04 Sep 2012 03:55:22 +0000
+Received: by mail.novamarque.com (Postfix, from userid 48)
+	id 1C2D754AAAB8; Tue,  4 Sep 2012 16:55:17 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=galorenetwork.co.uk;
+	s=default; t=1346774118;
+	bh=hNMz5S/zDO0/WEHun51q4mAXC8tZVuibTdY8hjNe6FI=;
+	h=To:Subject:From:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:Message-Id:Date;
+	b=QUsILkWI1IefL+PgKEl1vkkkl68hg34gPDlkmJdNQ4At0OaSuI5BJJss+ys4UWBdO
+	 NRYQsLDEKSxa2BXaCKy7aD4hB+85+MSJmj3zfyU4kiJJconqCy8EdcXkAXG/0tvyOp
+	 0OQ+KLPKhGJrBHmq3z7++SC4iOr0007vgnZYNTlU=
+To: kake@earth.li
+Subject: Pubs Galore activity report
+From:donotreply@galorenetwork.co.uk
+MIME-Version: 1.0
+Precedence: bulk
+Content-Type: multipart/mixed;
+  boundary="11outerboundary11"
+Message-Id: <20120904155518.1C2D754AAAB8@mail.novamarque.com>
+Date: Tue,  4 Sep 2012 16:55:17 +0100 (BST)
+Content-Transfer-Encoding: 7bit
+X-Delivered-To: <kake@earth.li>
+Status: RO
+Content-Length: 3992
+Lines: 71
+
+    
+Mime-Version: 1.0
+
+This is a multi-part message in MIME format.
+
+--11outerboundary11
+Content-Type: multipart/alternative;
+  boundary="11boundary11"
+
+  --11boundary11
+Content-Type: text/plain;
+  charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Kake Pugh,
+
+Since 15:55, 4<sup>th</sup> September:
+2 pictures have been added for Mojama (http://www.pubsgalore.co.uk/pubs/35579/) in Croydon, London (Greater) by john mcgraw (http://www.pubsgalore.co.uk/userinfo.php?name=hophead).
+A request to mark Mojama (http://www.pubsgalore.co.uk/pubs/35579/) in Croydon, London (Greater) as open by David McNally (http://www.pubsgalore.co.uk/userinfo.php?name=olias) has been completed.
+3 pictures have been added for The Fox Inn (http://www.pubsgalore.co.uk/pubs/16271/) in Keston, London (Greater) by Rex Rattus (http://www.pubsgalore.co.uk/userinfo.php?name=Rex_Rattus).
+
+
+Thankyou for your contributions to Pubs Galore,
+Galore Network Admin team
+
+Please note: this e-mail was sent from an address that cannot accept incoming e-mail.
+
+You have active follows (subscriptions) on the Pubs Galore web site, to manage these subscriptions go to: http://www.pubsgalore.co.uk/pubuser/subs.php
+    
+--11boundary11
+Content-Type: text/html;
+  charset="UTF-8"
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHk+CjwhRE9DVFlQRSBodG1sIFBVQkxJQyAiLS8vVzNDLy9EVEQgWEhUTUwgMS4w
+IFRyYW5zaXRpb25hbC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDEvRFREL3hodG1s
+MS10cmFuc2l0aW9uYWwuZHRkIj4NCjxodG1sPg0KPGhlYWQ+DQo8bWV0YSBodHRwLWVxdWl2PSJD
+b250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDsgY2hhcnNldD11dGYtOCIgLz4NCjxzdHls
+ZSB0eXBlPSJ0ZXh0L2NzcyI+DQpwLCBhIHsNCiAgZm9udC1mYW1pbHk6IFZlcmRhbmEsQXJpYWws
+SGVsdmV0aWNhLHNhbnMtc2VyaWY7DQogIGZvbnQtc2l6ZTogMTBwdDsNCn0NCi5hcHByb3ZhbCwg
+LmluZm9ybWF0aW9uLCAuYWRtaW5ub3RlLCAucmVqZWN0aW9uIHsNCiAgbWFyZ2luOiAwOw0KfQ0K
+LmFwcHJvdmFsIHsNCiAgY29sb3I6ICMwMDdGMUQ7DQp9DQouYXBwcm92YWwgYXsNCiAgY29sb3I6
+ICMwMDRGMTI7DQp9DQoucmVqZWN0aW9uIHsNCiAgY29sb3I6ICM3RjAwMDA7DQp9DQoucmVqZWN0
+aW9uIGEgew0KICBjb2xvcjogIzVGMDYwNjsNCn0NCi5pbmZvcm1hdGlvbiwgLmFkbWlubm90ZSB7
+DQogIGNvbG9yOiAjNUY1RjVGOw0KfQ0KLmluZm9ybWF0aW9uIGEsIC5hZG1pbm5vdGUgYXsNCiAg
+Y29sb3I6ICMzNzNGMzk7DQp9DQouaW50cm8gew0KICBtYXJnaW4tYm90dG9tOiAwOw0KfQ0KLmNv
+bW1lbnQgew0KICBjb2xvcjogIzREMDA5RjsNCn0NCjwvc3R5bGU+DQo8L2hlYWQ+DQo8Ym9keT4N
+CjxwPkhpIEtha2UgUHVnaCw8L3A+DQo8cCBjbGFzcz0iaW50cm8iPk9uIFB1YnMgR2Fsb3JlIHNp
+bmNlIDxiPjE1OjU1LCA0PHN1cD50aDwvc3VwPiBTZXB0ZW1iZXI8L2I+OjwvcD4NCjxwIGNsYXNz
+PSJpbmZvcm1hdGlvbiI+MiBwaWN0dXJlcyBoYXZlIGJlZW4gYWRkZWQgZm9yIDxhIGhyZWY9Imh0
+dHA6Ly93d3cucHVic2dhbG9yZS5jby51ay9wdWJzLzM1NTc5LyI+TW9qYW1hPC9hPiBpbiBDcm95
+ZG9uLCBMb25kb24gKEdyZWF0ZXIpIGJ5IDxhIGhyZWY9Imh0dHA6Ly93d3cucHVic2dhbG9yZS5j
+by51ay91c2VyaW5mby5waHA/bmFtZT1ob3BoZWFkIj5qb2huIG1jZ3JhdzwvYT4uPC9wPg0KPHAg
+Y2xhc3M9ImluZm9ybWF0aW9uIj5BIHJlcXVlc3QgdG8gbWFyayA8YSBocmVmPSJodHRwOi8vd3d3
+LnB1YnNnYWxvcmUuY28udWsvcHVicy8zNTU3OS8iPk1vamFtYTwvYT4gaW4gQ3JveWRvbiwgTG9u
+ZG9uIChHcmVhdGVyKSBhcyBvcGVuIGJ5IDxhIGhyZWY9Imh0dHA6Ly93d3cucHVic2dhbG9yZS5j
+by51ay91c2VyaW5mby5waHA/bmFtZT1vbGlhcyI+RGF2aWQgTWNOYWxseTwvYT4gaGFzIGJlZW4g
+Y29tcGxldGVkLjwvcD4NCjxwIGNsYXNzPSJpbmZvcm1hdGlvbiI+MyBwaWN0dXJlcyBoYXZlIGJl
+ZW4gYWRkZWQgZm9yIDxhIGhyZWY9Imh0dHA6Ly93d3cucHVic2dhbG9yZS5jby51ay9wdWJzLzE2
+MjcxLyI+VGhlIEZveCBJbm48L2E+IGluIEtlc3RvbiwgTG9uZG9uIChHcmVhdGVyKSBieSA8YSBo
+cmVmPSJodHRwOi8vd3d3LnB1YnNnYWxvcmUuY28udWsvdXNlcmluZm8ucGhwP25hbWU9UmV4X1Jh
+dHR1cyI+UmV4IFJhdHR1czwvYT4uPC9wPg0KDQoNCg0KPHA+VGhhbmt5b3UgZm9yIHlvdXIgY29u
+dHJpYnV0aW9ucyB0byBQdWJzIEdhbG9yZSw8YnIgLz4NCkdhbG9yZSBOZXR3b3JrIEFkbWluIHRl
+YW08L3A+DQo8cD5QbGVhc2Ugbm90ZTogdGhpcyBlLW1haWwgd2FzIHNlbnQgZnJvbSBhbiBhZGRy
+ZXNzIHRoYXQgY2Fubm90IGFjY2VwdCBpbmNvbWluZyBlLW1haWwuPC9wPg0KPHA+WW91IGhhdmUg
+YWN0aXZlIGZvbGxvd3MgKHN1YnNjcmlwdGlvbnMpIG9uIHRoZSBQdWJzIEdhbG9yZSB3ZWIgc2l0
+ZSwgdG8gbWFuYWdlIHRoZXNlIHN1YnNjcmlwdGlvbnMgPGEgaHJlZj0iaHR0cDovL3d3dy5wdWJz
+Z2Fsb3JlLmNvLnVrL3B1YnVzZXIvc3Vicy5waHAiPmNsaWNrIGhlcmU8L2E+LjwvcD4NCg0KPC9i
+b2R5Pg0KPC9odG1sPg0KCjwvYm9keT48L2h0bWw+Cg==
+--11boundary11--
+--11outerboundary11--
+
