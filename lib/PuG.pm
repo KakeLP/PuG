@@ -6,6 +6,8 @@ use warnings;
 use HTML::PullParser;
 use PuG::Datum;
 use PuG::Email::Folder;
+use PuG::Templates;
+use Template;
 
 our $VERSION = '0.01';
 
@@ -76,6 +78,36 @@ sub extract_info_paras {
   }
 
   return @data;
+}
+
+=item B<print_html_report>
+
+  my $report = PuG->print_html_report( file => $mbox_filename );
+
+Input: the name of an mbox containing Pubs Galore activity reports.
+
+Returns: an HTML report linking the pubs mentioned in the
+emails to potentially-corresponding pubs on RGL.
+
+=cut
+
+sub print_html_report {
+  my ( $self, %args ) = @_;
+
+  my @data = PuG->extract_info_paras( $args{file} );
+  my $template = PuG::Templates->html_report_template;
+  my $tt = Template->new;
+
+  my @pubs;
+  foreach my $datum ( @data ) {
+    push @pubs, { puginfo => $datum, rglmatches => $datum->match_to_rgl };
+  }
+
+  my %tt_vars = ( pubs => \@pubs );
+
+  my $report;
+  $tt->process( \$template, \%tt_vars, \$report ) || die $tt->error;
+  return $report;
 }
 
 =item B<print_text_report>
