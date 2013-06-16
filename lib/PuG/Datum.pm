@@ -42,6 +42,12 @@ sub new {
   $self->{_name} = $self->_identify_name( $data );
   $self->{_type} = $self->_identify_type( $data );
   $self->{_url} = $self->_identify_url( $data );
+  if ( $self->type eq "picturemove" ) {
+    $self->{_picturemove_new_name}
+      = $self->_identify_picturemove_new_name( $data );
+    $self->{_picturemove_new_url}
+      = $self->_identify_picturemove_new_url( $data );
+  }
 
   # Now go and get things from the PuG site.
   $self->{_address} = $self->_identify_address( $data );
@@ -116,10 +122,12 @@ sub pub_page_html {
   my $self = shift;
   return $self->{_pub_page_html} if $self->{_pub_page_html};
   my $url = $self->url || die "No URL for " . $self->name . "!\n";
-  my $mech = WWW::Mechanize->new();
+  my $mech = WWW::Mechanize->new( quiet => 1, autocheck => 0 );
   $mech->get( $url );
-  my $content = $mech->content();
-  $self->{_pub_page_html} = $content;
+  if ( $mech->success() ) {
+    my $content = $mech->content();
+    $self->{_pub_page_html} = $content;
+  }
 }
 
 # Internal methods to pull out data.
@@ -194,6 +202,20 @@ sub _identify_name {
   return $name;
 }
 
+sub _identify_picturemove_new_name {
+  my ( $self, $data ) = @_;
+  $data =~ m|has been moved to <a href="http://www.pubsgalore.co.uk/pubs/\d+/">([^<]+)<|;
+  my $name = $1;
+  $name =~ s/&#039;/'/g;
+  return $name;
+}
+
+sub _identify_picturemove_new_url {
+  my ( $self, $data ) = @_;
+  $data =~ m|has been moved to <a href="(http://www.pubsgalore.co.uk/pubs/\d+/)">|;
+  return $1;
+}
+
 sub _identify_type {
   my ( $self, $data ) = @_;
   if ( $data =~ m/^A review has been submitted for/ ) {
@@ -201,6 +223,8 @@ sub _identify_type {
   } elsif ( $data =~ m/^\d+ pictures have been added/
             || $data =~ m/^A picture has been added/ ) {
     return "picture";
+  } elsif ( $data =~ m/^A picture for.*has been moved to/ ) {
+    return "picturemove";
   } elsif ( $data =~ m/^A request to mark.*as open/ ) {
     return "open";
   }
@@ -217,13 +241,18 @@ sub _identify_url {
 Accessors: address, district (i.e. postal district, e.g. SW15), name,
 type, url.
 
-Type can be: open, picture, review.
+Type can be: open, picture, picturemove, review.
+
+When type is picturemove, we also have accessors picturemove_new_name and
+picturemove_new_url.
 
 =cut
 
 sub address { return shift->{_address}; }
 sub district { return shift->{_district}; }
 sub name { return shift->{_name}; }
+sub picturemove_new_name { return shift->{_picturemove_new_name}; }
+sub picturemove_new_url { return shift->{_picturemove_new_url}; }
 sub type { return shift->{_type}; }
 sub url { return shift->{_url}; }
 
