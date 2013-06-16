@@ -195,19 +195,13 @@ sub _identify_district {
 sub _identify_name {
   my ( $self, $data ) = @_;
   $data =~ m|<a href="http://www.pubsgalore.co.uk/pubs/\d+/">([^<]+)</a>|;
-  my $name = $1;
-  $name =~ s/\s+/ /g;
-  $name =~ s/&amp;/And/g;
-  $name =~ s/^The //;
-  return $name;
+  return $self->_rglise( $1 );
 }
 
 sub _identify_picturemove_new_name {
   my ( $self, $data ) = @_;
   $data =~ m|has been moved to <a href="http://www.pubsgalore.co.uk/pubs/\d+/">([^<]+)<|;
-  my $name = $1;
-  $name =~ s/&#039;/'/g;
-  return $name;
+  return $self->_rglise( $1 );
 }
 
 sub _identify_picturemove_new_url {
@@ -227,6 +221,10 @@ sub _identify_type {
     return "picturemove";
   } elsif ( $data =~ m/^A request to mark.*as open/ ) {
     return "open";
+  } elsif ( $data =~ m/^A request to mark.*as closed/ ) {
+    return "closed";
+  } elsif ( $data =~ m/^A request to mark.*as part of the.*area/ ) {
+    return "locale";
   }
 }
 
@@ -236,12 +234,21 @@ sub _identify_url {
   return $1;
 }
 
+sub _rglise {
+  my ( $self, $name ) = @_;
+  $name =~ s/\s+/ /g;
+  $name =~ s/&amp;/And/g;
+  $name =~ s/^The //;
+  $name =~ s/&#039;/'/g;
+  return $name;
+}
+
 =item B<accessors>
 
 Accessors: address, district (i.e. postal district, e.g. SW15), name,
 type, url.
 
-Type can be: open, picture, picturemove, review.
+Type can be: closed, locale, open, picture, picturemove, review.
 
 When type is picturemove, we also have accessors picturemove_new_name and
 picturemove_new_url.
