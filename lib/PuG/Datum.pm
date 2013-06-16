@@ -195,19 +195,13 @@ sub _identify_district {
 sub _identify_name {
   my ( $self, $data ) = @_;
   $data =~ m|<a href="http://www.pubsgalore.co.uk/pubs/\d+/">([^<]+)</a>|;
-  my $name = $1;
-  $name =~ s/\s+/ /g;
-  $name =~ s/&amp;/And/g;
-  $name =~ s/^The //;
-  return $name;
+  return $self->_rglise( $1 );
 }
 
 sub _identify_picturemove_new_name {
   my ( $self, $data ) = @_;
   $data =~ m|has been moved to <a href="http://www.pubsgalore.co.uk/pubs/\d+/">([^<]+)<|;
-  my $name = $1;
-  $name =~ s/&#039;/'/g;
-  return $name;
+  return $self->_rglise( $1 );
 }
 
 sub _identify_picturemove_new_url {
@@ -234,6 +228,15 @@ sub _identify_url {
   my ( $self, $data ) = @_;
   $data =~ m|<a href="(http://www.pubsgalore.co.uk/pubs/\d+/)">|;
   return $1;
+}
+
+sub _rglise {
+  my ( $self, $name ) = @_;
+  $name =~ s/\s+/ /g;
+  $name =~ s/&amp;/And/g;
+  $name =~ s/^The //;
+  $name =~ s/&#039;/'/g;
+  return $name;
 }
 
 =item B<accessors>

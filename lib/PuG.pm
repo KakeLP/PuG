@@ -128,11 +128,12 @@ sub print_text_report {
 
   my $report;
   foreach my $datum ( @data ) {
-    $report .= sprintf( "Matches for %s, %s, %s:\n", $datum->name,
-                        $datum->address, $datum->district );
+    $report .= sprintf( "%s, %s, %s:\n  Event type: %s\n  %s\n",
+                        $datum->name, $datum->address, $datum->district,
+                        $datum->type, $datum->url );
     my @matches = $datum->match_to_rgl;
     if ( !scalar @matches ) {
-      $report .= "None!\n\n";
+      $report .= "No matches!\n\n";
     } else {
       foreach my $match ( @matches ) {
         $report .= sprintf( "  %s\n", $match->url );

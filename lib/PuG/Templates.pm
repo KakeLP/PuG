@@ -15,6 +15,8 @@ sub html_report_template {
       <li>[% pub.puginfo.name %], [% pub.puginfo.address %],
           [% pub.puginfo.district %]:
           <ul>
+            <li>Event type: [% pub.puginfo.type %]</li>
+            <li><a href="[% pub.puginfo.url %]">[% pub.puginfo.url %]</a></li>
             [% FOREACH match = pub.rglmatches %]
               <li><a href="[% match.url %]">[% match.url %]</a></li>
             [% END %]
