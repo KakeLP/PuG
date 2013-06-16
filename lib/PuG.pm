@@ -98,9 +98,10 @@ sub print_html_report {
   my $template = PuG::Templates->html_report_template;
   my $tt = Template->new;
 
+  @data = sort { $a->name cmp $b->name } @data;
   my @pubs;
   foreach my $datum ( @data ) {
-    push @pubs, { puginfo => $datum, rglmatches => $datum->match_to_rgl };
+    push @pubs, { puginfo => $datum, rglmatches => [ $datum->match_to_rgl ] };
   }
 
   my %tt_vars = ( pubs => \@pubs );
@@ -125,18 +126,23 @@ sub print_text_report {
   my ( $self, %args ) = @_;
 
   my @data = PuG->extract_info_paras( $args{file} );
+  @data = sort { $a->name cmp $b->name } @data;
 
   my $report;
   foreach my $datum ( @data ) {
-    $report .= sprintf( "Matches for %s, %s, %s:\n", $datum->name,
-                        $datum->address, $datum->district );
+    my $name_addr = join ", ", $datum->name, $datum->address || "",
+                    $datum->district || "";
+
+    $report .= sprintf( "%s:\n  Event type: %s\n  %s\n", $name_addr,
+                        $datum->type, $datum->url );
     my @matches = $datum->match_to_rgl;
     if ( !scalar @matches ) {
-      $report .= "None!\n\n";
+      $report .= "No matches!\n\n";
     } else {
       foreach my $match ( @matches ) {
         $report .= sprintf( "  %s\n", $match->url );
       }
+      $report .= "\n";
     }
   }
 
