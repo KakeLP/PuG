@@ -221,6 +221,8 @@ sub _identify_type {
     return "picturemove";
   } elsif ( $data =~ m/^A request to mark.*as open/ ) {
     return "open";
+  } elsif ( $data =~ m/^A request to mark.*as closed/ ) {
+    return "closed";
   }
 }
 
@@ -244,7 +246,7 @@ sub _rglise {
 Accessors: address, district (i.e. postal district, e.g. SW15), name,
 type, url.
 
-Type can be: open, picture, picturemove, review.
+Type can be: closed, open, picture, picturemove, review.
 
 When type is picturemove, we also have accessors picturemove_new_name and
 picturemove_new_url.
