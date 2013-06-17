@@ -188,7 +188,7 @@ sub _identify_district {
     }
   }
 
-  $district =~ s/\s.*$//;
+  $district =~ s/[A-Z]?\s.*$//;
   return $district;
 }
 
