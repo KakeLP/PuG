@@ -1,6 +1,6 @@
 use strict;
 use PuG;
-use Test::More tests => 34;
+use Test::More tests => 35;
 
 # mbox with a single message including one review
 my @paras = PuG->extract_info_paras( "t/samples/pug-single-review" );
@@ -46,3 +46,7 @@ is( $paras[2]->type, "picture", "...correct type" );
 is( $paras[2]->name, "Fox Inn", "...correct RGLised name" );
 is( $paras[2]->address, "Heathfield Road", "...correct address" );
 is( $paras[2]->district, "BR2", "...correct postal district" );
+
+# pub in EC1 district (postcode starts EC1R)
+@paras = PuG->extract_info_paras( "t/samples/pug-ec1r" );
+is( $paras[0]->district, "EC1", "correct postal district for EC1R pub" );
