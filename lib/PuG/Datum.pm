@@ -86,7 +86,14 @@ sub match_to_rgl {
   $mech->get( $url );
   my $content = $mech->content();
   die $mech->status unless $mech->success;
-  my $data = decode_json $content;
+  # Try to get the data out of JSON as UTF-8 - if this fails then fallback.
+  my $data;
+  eval {
+    $data = decode_json $content;
+  };
+  if ( $@ ) {
+    $data = from_json $content;
+  }
   my @pubs = @$data;
 
   # Check everything in Now Closed.
