@@ -70,7 +70,7 @@ sub extract_info_paras {
         $content = "";
       } elsif ( $in_para && $flag eq "E" && lc( $tagname ) eq "p" ) {
         $in_para = 0;
-        my $datum = PuG::Datum->new( $content );
+        my $datum = PuG::Datum->new( data => $content );
         push @data, $datum;
       } elsif ( $in_para ) {
         $content .= $text;

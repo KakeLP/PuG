@@ -22,19 +22,20 @@ Model a single info paragraph from a Pubs Galore activity report email.
 
 =item B<new>
 
-  my $content = qq( A review has been submitted for <a
+  my $data = qq( A review has been submitted for <a
     href="http://www.pubsgalore.co.uk/pubs/24672/">Dog &amp; Fox</a> in SW19,
     London (Greater) by <a
     href="http://www.pubsgalore.co.uk/userinfo.php?name=John+Grenade">Doug
     Middleton</a>. );
-  my $datum = PuG::Datum->new( $content );
+  my $datum = PuG::Datum->new( data => $data );
 
 Input: A single info paragraph (HTML) from a Pubs Galore activity report.
 
 =cut
 
 sub new {
-  my ( $class, $data ) = @_;
+  my ( $class, %args ) = @_;
+  my $data = $args{data};
   my $self = {};
   bless $self, $class;
 
