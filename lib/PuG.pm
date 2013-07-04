@@ -112,6 +112,11 @@ sub print_html_report {
   @data = sort { $a->name cmp $b->name } @data;
   my @pubs;
   foreach my $datum ( @data ) {
+    if ( $args{verbose} ) {
+      my $name_addr = join ", ", $datum->name, $datum->address || "",
+                      $datum->district || "";
+      warn "Getting matches for $name_addr (" . $datum->url . ")\n"
+    }
     push @pubs, { puginfo => $datum, rglmatches => [ $datum->match_to_rgl ] };
   }
 
@@ -151,6 +156,8 @@ sub print_text_report {
 
     $report .= sprintf( "%s:\n  Event type: %s\n  %s\n", $name_addr,
                         $datum->type, $datum->url );
+    warn "Getting matches for $name_addr (" . $datum->url . ")\n"
+      if $args{verbose};
     my @matches = $datum->match_to_rgl;
     if ( !scalar @matches ) {
       $report .= "No matches!\n\n";
