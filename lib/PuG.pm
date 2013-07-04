@@ -27,17 +27,22 @@ mentioned with the corresponding RGL entries.
 
 =item B<extract_info_paras>
 
-  my @paras = PuG->extract_info_paras( file => $mbox_filename );
+  my @paras = PuG->extract_info_paras( file => $mbox_filename,
+                                       verbose => 1 );
 
-Input: the name of an mbox containing Pubs Galore activity reports.
+Input: the name of an mbox containing Pubs Galore activity reports,
+optional verbosity flag.
 
 Returns: an array of L<PuG::Datum> objects, one for each report line.
+
+Note: verbosity defaults to off.  If turned on, it comes as warnings.
 
 =cut
 
 sub extract_info_paras {
   my ( $self, %args ) = @_;
   my $filename = $args{file};
+  my $verbose = $args{verbose};
   my @emails = PuG::Email::Folder->new( $filename )->messages;
 
   my @data;
@@ -70,7 +75,7 @@ sub extract_info_paras {
         $content = "";
       } elsif ( $in_para && $flag eq "E" && lc( $tagname ) eq "p" ) {
         $in_para = 0;
-        my $datum = PuG::Datum->new( data => $content );
+        my $datum = PuG::Datum->new( data => $content, verbose => $verbose );
         push @data, $datum;
       } elsif ( $in_para ) {
         $content .= $text;
@@ -83,19 +88,24 @@ sub extract_info_paras {
 
 =item B<print_html_report>
 
-  my $report = PuG->print_html_report( file => $mbox_filename );
+  my $report = PuG->print_html_report( file => $mbox_filename,
+                                       verbose => 1 );
 
-Input: the name of an mbox containing Pubs Galore activity reports.
+Input: the name of an mbox containing Pubs Galore activity reports,
+optional verbosity flag.
 
 Returns: an HTML report linking the pubs mentioned in the
 emails to potentially-corresponding pubs on RGL.
+
+Note: verbosity defaults to off.  If turned on, it comes as warnings.
 
 =cut
 
 sub print_html_report {
   my ( $self, %args ) = @_;
 
-  my @data = PuG->extract_info_paras( file => $args{file} );
+  my @data = PuG->extract_info_paras( file => $args{file},
+                                      verbose => $args{verbose} );
   my $template = PuG::Templates->html_report_template;
   my $tt = Template->new;
 
@@ -114,19 +124,24 @@ sub print_html_report {
 
 =item B<print_text_report>
 
-  my $report = PuG->print_text_report( file => $mbox_filename );
+  my $report = PuG->print_text_report( file => $mbox_filename,
+                                       verbose => 1 );
 
-Input: the name of an mbox containing Pubs Galore activity reports.
+Input: the name of an mbox containing Pubs Galore activity reports
+optional verbosity flag.
 
 Returns: a formatted text-only report linking the pubs mentioned in the
 emails to potentially-corresponding pubs on RGL.
+
+Note: verbosity defaults to off.  If turned on, it comes as warnings.
 
 =cut
 
 sub print_text_report {
   my ( $self, %args ) = @_;
 
-  my @data = PuG->extract_info_paras( file => $args{file} );
+  my @data = PuG->extract_info_paras( file => $args{file},
+                                      verbose => $args{verbose} );
   @data = sort { $a->name cmp $b->name } @data;
 
   my $report;

@@ -36,6 +36,7 @@ Input: A single info paragraph (HTML) from a Pubs Galore activity report.
 sub new {
   my ( $class, %args ) = @_;
   my $data = $args{data};
+  my $verbose = $args{verbose};
   my $self = {};
   bless $self, $class;
 
@@ -49,6 +50,9 @@ sub new {
     $self->{_picturemove_new_url}
       = $self->_identify_picturemove_new_url( $data );
   }
+
+  # Emit warnings if required to be verbose.
+  warn "Working on pub: $self->{_name} ($self->{_url})\n" if $verbose;
 
   # Now go and get things from the PuG site.
   $self->{_address} = $self->_identify_address( $data );

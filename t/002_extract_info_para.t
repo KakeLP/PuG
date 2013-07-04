@@ -1,9 +1,21 @@
 use strict;
 use PuG;
-use Test::More tests => 35;
+use Test::More tests => 38;
 
 # mbox with a single message including one review
-my @paras = PuG->extract_info_paras( file => "t/samples/pug-single-review" );
+my @paras;
+eval {
+  local $SIG{__WARN__} = sub { die $_[0] };
+  @paras = PuG->extract_info_paras( file => "t/samples/pug-single-review" );
+};
+is( $@, "", "->extract_info_paras doesn't warn by default" );
+eval {
+  local $SIG{__WARN__} = sub { die $_[0] };
+  @paras = PuG->extract_info_paras( file => "t/samples/pug-single-review",
+                                    verbose => 1 );
+};
+ok( $@, "...but it does when you ask for verbosity" );
+like( $@, qr/\bDog\b.*\bFox/, "...and the warning seems to mention the pub" );
 is( scalar @paras, 1, "single info para found in one mail" );
 my $datum = $paras[0];
 isa_ok( $datum, "PuG::Datum" );
