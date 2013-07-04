@@ -27,7 +27,7 @@ mentioned with the corresponding RGL entries.
 
 =item B<extract_info_paras>
 
-  my @paras = PuG->extract_info_paras( $mbox_filename );
+  my @paras = PuG->extract_info_paras( file => $mbox_filename );
 
 Input: the name of an mbox containing Pubs Galore activity reports.
 
@@ -36,7 +36,8 @@ Returns: an array of L<PuG::Datum> objects, one for each report line.
 =cut
 
 sub extract_info_paras {
-  my ( $self, $filename ) = @_;
+  my ( $self, %args ) = @_;
+  my $filename = $args{file};
   my @emails = PuG::Email::Folder->new( $filename )->messages;
 
   my @data;
@@ -94,7 +95,7 @@ emails to potentially-corresponding pubs on RGL.
 sub print_html_report {
   my ( $self, %args ) = @_;
 
-  my @data = PuG->extract_info_paras( $args{file} );
+  my @data = PuG->extract_info_paras( file => $args{file} );
   my $template = PuG::Templates->html_report_template;
   my $tt = Template->new;
 
@@ -125,7 +126,7 @@ emails to potentially-corresponding pubs on RGL.
 sub print_text_report {
   my ( $self, %args ) = @_;
 
-  my @data = PuG->extract_info_paras( $args{file} );
+  my @data = PuG->extract_info_paras( file => $args{file} );
   @data = sort { $a->name cmp $b->name } @data;
 
   my $report;

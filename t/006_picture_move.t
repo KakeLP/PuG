@@ -3,7 +3,7 @@ use PuG;
 use Test::More tests => 7;
 
 my @paras = PuG->extract_info_paras(
-                               "t/samples/pug-picture-moved-from-dead-page" );
+                       file => "t/samples/pug-picture-moved-from-dead-page" );
 
 TODO: {
   local $TODO = "Not important yet.";
