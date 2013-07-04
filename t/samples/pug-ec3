@@ -1,0 +1,119 @@
+From donotreply@galorenetwork.co.uk Wed Mar 27 20:55:10 2013
+Return-path: <donotreply@galorenetwork.co.uk>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on the.earth.li
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.4 required=5.0 tests=BAYES_00,HTML_MESSAGE,
+	MIME_HTML_ONLY,MPART_ALT_DIFF,SPF_PASS,T_DKIM_INVALID autolearn=no
+	version=3.3.1
+Envelope-to: kake@earth.li
+Delivery-date: Wed, 27 Mar 2013 20:55:10 +0000
+Received: from fr00.novamarque.com ([94.23.30.80] helo=mail.novamarque.com)
+	by the.earth.li with esmtp (Exim 4.72)
+	(envelope-from <donotreply@galorenetwork.co.uk>)
+	id 1UKxNG-0008CV-5o
+	for kake@earth.li; Wed, 27 Mar 2013 20:55:10 +0000
+Received: from mail.novamarque.com (uk00.novamarque.com [188.227.176.226])
+	by mail.novamarque.com (Postfix) with ESMTP id A2900523FF
+	for <kake@earth.li>; Wed, 27 Mar 2013 21:55:10 +0100 (CET)
+Authentication-Results: mail.novamarque.com; dkim=pass
+	reason="1024-bit key"
+	header.d=galorenetwork.co.uk header.i=@galorenetwork.co.uk
+	header.b=Tgc4rHRM; dkim-adsp=pass
+Received: by mail.novamarque.com (Postfix, from userid 48)
+	id E643054A87F5; Wed, 27 Mar 2013 20:55:05 +0000 (GMT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=galorenetwork.co.uk;
+	s=default; t=1364417705;
+	bh=EXOl66F1mO+SFFjvDL3e4gMkdvA2zGlU6Twp8+FtMFU=;
+	h=To:Subject:From:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:Message-Id:Date;
+	b=Tgc4rHRMxoHq9WE9gxW3MhASa9KBbFP+/ijpos7OVl8oUsrvEpLktHHZ940NE1Wbi
+	 5U1M9PyEIxpg/jpnMuLgNBLxA5wsOU21pqJP5JCjE6JUZV1oAhUaqpe0dXTN9nBJcK
+	 RpO9KFuRgGP4GqXatzzUy8M9J29QEiGk7bkB8vtE=
+To: kake@earth.li
+Subject: Pubs Galore activity report
+From:donotreply@galorenetwork.co.uk
+MIME-Version: 1.0
+Precedence: bulk
+Content-Type: multipart/mixed;
+  boundary="11outerboundary11"
+Message-Id: <20130327205505.E643054A87F5@mail.novamarque.com>
+Date: Wed, 27 Mar 2013 20:55:05 +0000 (GMT)
+Content-Transfer-Encoding: 7bit
+X-Delivered-To: <kake@earth.li>
+Status: RO
+Content-Length: 4144
+Lines: 72
+
+    
+Mime-Version: 1.0
+
+This is a multi-part message in MIME format.
+
+--11outerboundary11
+Content-Type: multipart/alternative;
+  boundary="11boundary11"
+
+  --11boundary11
+Content-Type: text/plain;
+  charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Kake Pugh,
+
+Since 19:55, 27<sup>th</sup> March:
+A review has been submitted for The Euston Flyer (http://www.pubsgalore.co.uk/pubs/53481/) in NW1, London (Central) by moby duck (http://www.pubsgalore.co.uk/userinfo.php?name=Mobyduck).
+A review has been edited for The Crosse Keys (JD Wetherspoon) (http://www.pubsgalore.co.uk/pubs/53867/) in EC3, London (Central) by Just a quick pint, then I'm off (http://www.pubsgalore.co.uk/userinfo.php?name=rpadam).
+A review has been edited for The Green Man (JD Wetherspoon) (http://www.pubsgalore.co.uk/pubs/54126/) in EC2, London (Central) by Just a quick pint, then I'm off (http://www.pubsgalore.co.uk/userinfo.php?name=rpadam).
+
+
+Thankyou for your contributions to Pubs Galore,
+Galore Network Admin team
+
+Please note: this e-mail was sent from an address that cannot accept incoming e-mail.
+
+You have active follows (subscriptions) on the Pubs Galore web site, to manage these subscriptions go to: http://www.pubsgalore.co.uk/pubuser/subs.php
+    
+--11boundary11
+Content-Type: text/html;
+  charset="UTF-8"
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHk+CjwhRE9DVFlQRSBodG1sIFBVQkxJQyAiLS8vVzNDLy9EVEQgWEhUTUwgMS4w
+IFRyYW5zaXRpb25hbC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDEvRFREL3hodG1s
+MS10cmFuc2l0aW9uYWwuZHRkIj4NCjxodG1sPg0KPGhlYWQ+DQo8bWV0YSBodHRwLWVxdWl2PSJD
+b250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDsgY2hhcnNldD11dGYtOCIgLz4NCjxzdHls
+ZSB0eXBlPSJ0ZXh0L2NzcyI+DQpwLCBhIHsNCiAgZm9udC1mYW1pbHk6IFZlcmRhbmEsQXJpYWws
+SGVsdmV0aWNhLHNhbnMtc2VyaWY7DQogIGZvbnQtc2l6ZTogMTBwdDsNCn0NCi5hcHByb3ZhbCwg
+LmluZm9ybWF0aW9uLCAuYWRtaW5ub3RlLCAucmVqZWN0aW9uIHsNCiAgbWFyZ2luOiAwOw0KfQ0K
+LmFwcHJvdmFsIHsNCiAgY29sb3I6ICMwMDdGMUQ7DQp9DQouYXBwcm92YWwgYXsNCiAgY29sb3I6
+ICMwMDRGMTI7DQp9DQoucmVqZWN0aW9uIHsNCiAgY29sb3I6ICM3RjAwMDA7DQp9DQoucmVqZWN0
+aW9uIGEgew0KICBjb2xvcjogIzVGMDYwNjsNCn0NCi5pbmZvcm1hdGlvbiwgLmFkbWlubm90ZSB7
+DQogIGNvbG9yOiAjNUY1RjVGOw0KfQ0KLmluZm9ybWF0aW9uIGEsIC5hZG1pbm5vdGUgYXsNCiAg
+Y29sb3I6ICMzNzNGMzk7DQp9DQouaW50cm8gew0KICBtYXJnaW4tYm90dG9tOiAwOw0KfQ0KLmNv
+bW1lbnQgew0KICBjb2xvcjogIzREMDA5RjsNCn0NCjwvc3R5bGU+DQo8L2hlYWQ+DQo8Ym9keT4N
+CjxwPkhpIEtha2UgUHVnaCw8L3A+DQo8cCBjbGFzcz0iaW50cm8iPk9uIFB1YnMgR2Fsb3JlIHNp
+bmNlIDxiPjE5OjU1LCAyNzxzdXA+dGg8L3N1cD4gTWFyY2g8L2I+OjwvcD4NCjxwIGNsYXNzPSJp
+bmZvcm1hdGlvbiI+QSByZXZpZXcgaGFzIGJlZW4gc3VibWl0dGVkIGZvciA8YSBocmVmPSJodHRw
+Oi8vd3d3LnB1YnNnYWxvcmUuY28udWsvcHVicy81MzQ4MS8iPlRoZSBFdXN0b24gRmx5ZXI8L2E+
+IGluIE5XMSwgTG9uZG9uIChDZW50cmFsKSBieSA8YSBocmVmPSJodHRwOi8vd3d3LnB1YnNnYWxv
+cmUuY28udWsvdXNlcmluZm8ucGhwP25hbWU9TW9ieWR1Y2siPm1vYnkgZHVjazwvYT4uPC9wPg0K
+PHAgY2xhc3M9ImluZm9ybWF0aW9uIj5BIHJldmlldyBoYXMgYmVlbiBlZGl0ZWQgZm9yIDxhIGhy
+ZWY9Imh0dHA6Ly93d3cucHVic2dhbG9yZS5jby51ay9wdWJzLzUzODY3LyI+VGhlIENyb3NzZSBL
+ZXlzIChKRCBXZXRoZXJzcG9vbik8L2E+IGluIEVDMywgTG9uZG9uIChDZW50cmFsKSBieSA8YSBo
+cmVmPSJodHRwOi8vd3d3LnB1YnNnYWxvcmUuY28udWsvdXNlcmluZm8ucGhwP25hbWU9cnBhZGFt
+Ij5KdXN0IGEgcXVpY2sgcGludCwgdGhlbiBJJiMwMzk7bSBvZmY8L2E+LjwvcD4NCjxwIGNsYXNz
+PSJpbmZvcm1hdGlvbiI+QSByZXZpZXcgaGFzIGJlZW4gZWRpdGVkIGZvciA8YSBocmVmPSJodHRw
+Oi8vd3d3LnB1YnNnYWxvcmUuY28udWsvcHVicy81NDEyNi8iPlRoZSBHcmVlbiBNYW4gKEpEIFdl
+dGhlcnNwb29uKTwvYT4gaW4gRUMyLCBMb25kb24gKENlbnRyYWwpIGJ5IDxhIGhyZWY9Imh0dHA6
+Ly93d3cucHVic2dhbG9yZS5jby51ay91c2VyaW5mby5waHA/bmFtZT1ycGFkYW0iPkp1c3QgYSBx
+dWljayBwaW50LCB0aGVuIEkmIzAzOTttIG9mZjwvYT4uPC9wPg0KDQoNCg0KPHA+VGhhbmt5b3Ug
+Zm9yIHlvdXIgY29udHJpYnV0aW9ucyB0byBQdWJzIEdhbG9yZSw8YnIgLz4NCkdhbG9yZSBOZXR3
+b3JrIEFkbWluIHRlYW08L3A+DQo8cD5QbGVhc2Ugbm90ZTogdGhpcyBlLW1haWwgd2FzIHNlbnQg
+ZnJvbSBhbiBhZGRyZXNzIHRoYXQgY2Fubm90IGFjY2VwdCBpbmNvbWluZyBlLW1haWwuPC9wPg0K
+PHA+WW91IGhhdmUgYWN0aXZlIGZvbGxvd3MgKHN1YnNjcmlwdGlvbnMpIG9uIHRoZSBQdWJzIEdh
+bG9yZSB3ZWIgc2l0ZSwgdG8gbWFuYWdlIHRoZXNlIHN1YnNjcmlwdGlvbnMgPGEgaHJlZj0iaHR0
+cDovL3d3dy5wdWJzZ2Fsb3JlLmNvLnVrL3B1YnVzZXIvc3Vicy5waHAiPmNsaWNrIGhlcmU8L2E+
+LjwvcD4NCg0KPC9ib2R5Pg0KPC9odG1sPg0KCjwvYm9keT48L2h0bWw+Cg==
+--11boundary11--
+--11outerboundary11--
+
