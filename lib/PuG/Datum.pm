@@ -76,8 +76,8 @@ sub match_to_rgl {
 
   # Can't do any matching if we've not got our data yet.
   my $district = $self->district;
-  my $name = $self->name;
-  return unless $district && $name;
+  my $pug_name = $self->name;
+  return unless $district && $pug_name;
 
   # Check the pubs in this postal district.
   my $url = "http://london.randomness.org.uk/wiki.cgi?action=index&"
@@ -110,7 +110,11 @@ sub match_to_rgl {
     my $rgl_pc = $pub->{node_data}{metadata}{postcode}[0];
     my $rgl_name_no_pc = $rgl_name;
     $rgl_name_no_pc =~ s/, $rgl_pc//;
-    if ( ( $rgl_name =~ m/$name/ || $name =~ m/$rgl_name_no_pc/ )
+    foreach ( ( $pug_name, $rgl_name ) ) {
+      s/[,']//g;
+      s/\s+/ /g;
+    }
+    if ( ( $rgl_name =~ m/$pug_name/ || $pug_name =~ m/$rgl_name_no_pc/ )
          && $rgl_name =~ m/$district/ ) {
       my $match = PuG::Match->new( $pub );
       push @matches, $match;
