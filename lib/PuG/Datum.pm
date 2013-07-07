@@ -230,6 +230,8 @@ sub _identify_type {
   my ( $self, $data ) = @_;
   if ( $data =~ m/^A review has been submitted for/ ) {
     return "review";
+  } elsif ( $data =~ m/^A review has been edited for/ ) {
+    return "review-edited";
   } elsif ( $data =~ m/^\d+ pictures have been added/
             || $data =~ m/^A picture has been added/ ) {
     return "picture";
@@ -264,7 +266,7 @@ sub _rglise {
 Accessors: address, district (i.e. postal district, e.g. SW15), name,
 type, url.
 
-Type can be: closed, locale, open, picture, picturemove, review.
+Type can be: closed, locale, open, picture, picturemove, review, review-edited.
 
 When type is picturemove, we also have accessors picturemove_new_name and
 picturemove_new_url.
